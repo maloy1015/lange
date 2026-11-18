@@ -1,0 +1,36 @@
+:root{--ink:#16123F;--ink2:#221C5C;--ink3:#2E2778;--gold:#E9C46A;--paper:#F5F1FF;--mute:#A9A3D6;--ok:#6EE7B7;--bad:#FCA5A5;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+body{font:400 16px/1.55 Manrope,system-ui,sans-serif;background:radial-gradient(1200px 600px at 80% -10%,#3A2F9A55,transparent),var(--ink);color:var(--paper);min-height:100vh;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:700;line-height:1.15}
+h1{font-size:clamp(2rem,6vw,3.4rem)}h2{font-size:1.7rem;margin-bottom:.6rem}h3{font-size:1.15rem}
+.wrap{max-width:1000px;margin:0 auto;padding:1rem}
+.nav{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;padding:.8rem 1rem;position:sticky;top:0;background:#16123Fe6;backdrop-filter:blur(10px);z-index:5;border-bottom:1px solid #ffffff18}
+.logo{font:700 1.4rem Fraunces,serif;color:var(--gold);margin-right:auto}
+button,.btn{font:inherit;font-weight:600;border:1px solid #ffffff30;background:transparent;color:var(--paper);padding:.55rem 1rem;border-radius:999px;cursor:pointer}
+button:hover{background:#ffffff14}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.on,.gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}.gold:hover{background:#f2d17f}
+.card{background:linear-gradient(160deg,var(--ink2),#1b1650);border:1px solid #ffffff1c;border-radius:18px;padding:1.2rem}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));margin:1rem 0}
+.lvl{font:700 2.4rem Fraunces,serif;color:var(--gold)}.mute{color:var(--mute)}
+input,textarea{width:100%;font:inherit;background:#0f0c33;color:var(--paper);border:1px solid #ffffff2a;border-radius:12px;padding:.75rem;margin:.35rem 0}
+.auth{max-width:420px;margin:8vh auto}.auth form{display:grid;gap:.4rem;margin:1rem 0}
+.err{color:var(--bad)}.row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.vid{aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#0f0c33;display:grid;place-items:center;border:1px dashed #ffffff35}
+.vid iframe{width:100%;height:100%;border:0}
+.lesson{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:.8rem 1rem;border-radius:12px;cursor:pointer;border:1px solid #ffffff14;margin:.4rem 0}
+.lesson:hover,.lesson.sel{border-color:var(--gold)}.done{color:var(--ok)}
+.opt{display:block;width:100%;text-align:left;margin:.4rem 0;border-radius:12px}.opt.pick{border-color:var(--gold);background:#E9C46A22}
+.bar{height:8px;background:#ffffff20;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gold)}
+@media(prefers-reduced-motion:no-preference){.card{transition:transform .2s}.card:hover{transform:translateY(-2px)}}
+/* ===== Premium qatlam ===== */
+body{background:radial-gradient(900px 500px at 85% -10%,#5B46E055,transparent),radial-gradient(700px 500px at -10% 30%,#E9C46A14,transparent),var(--ink)}
+h1,h2,.logo{background:linear-gradient(90deg,#FFF3C9,#E9C46A 55%,#B8893A);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav{background:#16123Fb8;backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid #E9C46A26}
+.card{background:linear-gradient(155deg,#ffffff12,#ffffff05),#1d1752;border:1px solid #ffffff20;box-shadow:0 20px 50px -24px #000c,inset 0 1px 0 #ffffff1c;border-radius:22px;position:relative}
+.card:hover{border-color:#E9C46A66}
+.gold{background:linear-gradient(135deg,#F6DE97,#E9C46A 50%,#C9973F);box-shadow:0 8px 24px -10px #E9C46A99}
+.lvl{background:linear-gradient(135deg,#FFF3C9,#E9C46A);-webkit-background-clip:text;background-clip:text;color:transparent}
+.bar{height:6px}.bar i{background:linear-gradient(90deg,#E9C46A,#FFF3C9);box-shadow:0 0 12px #E9C46A88}
+.vid{box-shadow:0 30px 60px -30px #000,0 0 0 1px #E9C46A33}
+.lesson{background:#ffffff08}.lesson.sel{background:#E9C46A14}
+@media(max-width:640px){.nav{position:fixed;top:auto;bottom:0;left:0;right:0;justify-content:space-around;border-top:1px solid #E9C46A26;border-bottom:0;padding-bottom:calc(.8rem + env(safe-area-inset-bottom))}.logo{display:none}body{padding-bottom:84px}}
