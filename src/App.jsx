@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import {SUBJECTS,PLACEMENT,EXAMS,LEVELS,MQ,MLV,ielts,toefl,gradeText} from './data.js';
-import * as A from './firebase.js';
+import * as A from './auth.js';
 const ls=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}};
 const cname={CEFR:'CEFR ingliz tili imtihoni',IELTS:'IELTS (taxminiy) imtihoni',TOEFL:'TOEFL (taxminiy) imtihoni',MATH:'Matematika imtihoni'};
 async function drawCert(r,name){
@@ -35,7 +35,7 @@ function Auth({onUser}){
  <input type="email" placeholder="Email" value={f.email} onChange={e=>setF({...f,email:e.target.value})} required/>
  <input type="password" placeholder="Parol (kamida 6 belgi)" minLength={6} value={f.pw} onChange={e=>setF({...f,pw:e.target.value})} required/>
  <button className="gold">{mode==='login'?'Kirish':'Ro‘yxatdan o‘tish'}</button></form>
- <button onClick={()=>go(A.google)} style={{width:'100%'}}>Google bilan kirish</button>
+ {A.hasGoogle&&<button onClick={()=>go(A.google)} style={{width:'100%'}}>Google bilan kirish</button>}
  {err&&<p className="err">{err}</p>}
  <p className="mute" style={{marginTop:'1rem'}}>{mode==='login'?'Akkauntingiz yo‘qmi?':'Akkauntingiz bormi?'} <a href="#" style={{color:'var(--gold)'}} onClick={e=>{e.preventDefault();setMode(mode==='login'?'reg':'login')}}>{mode==='login'?'Ro‘yxatdan o‘ting':'Kiring'}</a></p></div>}
 
